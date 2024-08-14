@@ -13,7 +13,7 @@ gradient_accumulation_steps: 4
 num_epochs: 5
 forget_loss: grad_ascent
 
-save_dir: ${model_path}/${forget_loss}_${lr}_${split}_${num_epochs}
+save_dir: /home/haokunch/${model_path}/${forget_loss}_${lr}_${split}_${num_epochs}
 overwrite_dir: false
 weight_decay: 0.01
 save_model: true

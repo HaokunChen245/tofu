@@ -1,3 +1,13 @@
+llama3.1-8b-inst:
+  hf_key: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+  question_start_tag: 
+    "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n
+     You are a helpful assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>"
+  question_end_tag: " [/INST]"
+  answer_tag: "<|start_header_id|>assistant<|end_header_id|>"
+  flash_attention2: "true"
+  gradient_checkpointing: "true"
+  ft_model_path: "locuslab/tofu_ft_llama3.1-8b-inst" 
 llama2-7b:
   hf_key: "NousResearch/Llama-2-7b-chat-hf"
   question_start_tag: "[INST] "
@@ -6,6 +16,15 @@ llama2-7b:
   flash_attention2: "true"
   gradient_checkpointing: "true"
   ft_model_path: "locuslab/tofu_ft_llama2-7b" #this model will be used for unlearning by default
+phi-3:
+  hf_key: "microsoft/Phi-3-mini-4k-instruct"
+  question_start_tag: "<|system|> You are a helpful assistant. <|end|>\n 
+    <|user|>"
+  question_end_tag: "<|end|>"
+  answer_tag: "<|assistant|> "
+  flash_attention2: "false"
+  gradient_checkpointing: "false"
+  ft_model_path: "locuslab/tofu_ft_phi-3-mini-4k-instruct"
 phi:
   hf_key: "microsoft/phi-1_5"
   question_start_tag: "Question: "

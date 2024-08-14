@@ -128,9 +128,9 @@ def main(cfg):
     if cfg.LoRA.r != 0:
         model = model.merge_and_unload()
 
-
     model.save_pretrained(cfg.save_dir)
     tokenizer.save_pretrained(cfg.save_dir)
+    print(cfg.save_dir)
 
 if __name__ == "__main__":
     main()
