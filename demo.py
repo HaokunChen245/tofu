@@ -14,7 +14,7 @@ if os.environ.get('LOCAL_RANK') is not None:
 else:
     device_map = None
 
-model_path = '/home/haokunch/data/locus/llm_weights/zhilif/TOFU/ft_epoch5_lr1e-05_llama3.1-8b-inst_full_wd0.01/checkpoint-312'
+model_path = '/home/haokunch/home/haokunch/data/locus/llm_weights/zhilif/TOFU/ft_epoch5_lr1e-05_llama3.1-8b-inst_full_wd0.01/checkpoint-312/grad_ascent_1e-05_forget05_5/checkpoint-15'
 config = AutoConfig.from_pretrained(MODEL_NAME, 
                                     trust_remote_code = True, 
                                     device_map=device_map)
@@ -30,7 +30,7 @@ model, tok = (
 )
 
 input_strings = ['<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n  \
-                 You are a helpful assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>When was Jaime Vasquez borned? <|eot_id|><|start_header_id|>assistant<|end_header_id|>']
+                 You are a helpful assistant.<|eot_id|><|start_header_id|>user<|end_header_id|> Could you generate a fictitious award that Xin Lee Williams might have won in their career? <|eot_id|><|start_header_id|>assistant<|end_header_id|>']
 left_pad_tokenizer = tok
 left_pad_tokenizer.padding_side = 'left'
 left_pad_tokenizer.padding_size = 'longest'

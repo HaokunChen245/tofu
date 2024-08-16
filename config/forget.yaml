@@ -1,17 +1,17 @@
-model_family: llama2-7b
-model_path: null
+model_family: llama3.1-8b-inst
+model_path: /home/haokunch/data/locus/llm_weights/zhilif/TOFU/ft_epoch5_lr1e-05_llama3.1-8b-inst_full_wd0.01/checkpoint-312
 LoRA:
   r: 0
   alpha: 32
   dropout: 0.05
 
 lr: 1e-5
-split: forget01
+split: forget05
 data_path: locuslab/TOFU
-batch_size: 16
+batch_size: 4
 gradient_accumulation_steps: 4
 num_epochs: 5
-forget_loss: grad_ascent
+forget_loss: idk
 
 save_dir: /home/haokunch/${model_path}/${forget_loss}_${lr}_${split}_${num_epochs}
 overwrite_dir: false
